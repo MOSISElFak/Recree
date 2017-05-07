@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+  <page-logo (click)="printTest()">
+  </page-logo>
+    <ion-title style="height: 40px;">
+      Recree
+    </ion-title>
+
+   <ion-buttons end>
+    <button ion-button icon-only (click)="clearMarkers()">
+      <ion-icon name="md-close" ></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="locateMe()">
+      <ion-icon name="md-locate" ></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="showHide()">
+      <ion-icon name="md-arrow-dropdown-circle"></ion-icon>
+    </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div id="rangeSelector">
+    <ion-range [(ngModel)]="range" min="0" max="5000" step="100">
+    <ion-icon range-left small name="md-eye"></ion-icon>
+    <ion-icon range-right name="md-eye"></ion-icon>
+  </ion-range>
+  </div>
+  <div #map id="map" style="height:100%;"></div>
+ 
+</ion-content>
